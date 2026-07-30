@@ -37,7 +37,7 @@ const courses: Course[] = [
     image: ai,
   },
   {
-    course: "Cyber Security & Ethical Hacking",
+    course: "Cyber Security ",
     description:
       "Develop defensive and offensive security skills to protect systems from threats and identify vulnerabilities responsibly.",
     image: cybersecurity,

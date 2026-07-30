@@ -24,9 +24,10 @@ export function Header() {
       <div className="hidden lg:flex w-full justify-between items-center px-10 h-[75px] bg-[#2f3e46] backdrop-blur-xl sticky top-0 z-50 shadow-lg">
 
         {/* LOGO */}
-        <Link to="/">
+        <Link to="/" data-discover="true">
           <img
             src={logo}
+            alt="Technex Cloud networks logo"
             className="w-[80px] h-[80px] hover:scale-105 transition drop-shadow-[0_0_10px_rgba(36,192,197,0.4)]"
           />
         </Link>
@@ -75,7 +76,7 @@ export function Header() {
       {/* ================= MOBILE HEADER ================= */}
       <div className="flex lg:hidden justify-between items-center px-4 h-[65px] bg-[#2F3E46]/90 backdrop-blur-xl sticky top-0 z-50">
         <Link to="/">
-          <img src={logo} className="w-[65px] h-[65px]" />
+          <img src={logo} alt="Technex cloud networks logo" className="w-[65px] h-[65px]" />
         </Link>
 
         <button
@@ -137,7 +138,7 @@ export function Header() {
             ))}
 
             {/* CTA */}
-            <Link to="/contactus" onClick={() => setMenuOpen(false)}>
+            <Link to="/contactus" onClick={() => {setMenuOpen(false); window.scrollTo(0,0)}}>
               <button className="mt-6 bg-[#24c0c5] px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
                 Contact Us
               </button>

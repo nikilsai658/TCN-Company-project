@@ -101,7 +101,7 @@ export function Digitalmarketing() {
            <div className="text-white text-5xl md:text-7xl font-bold pb-5 ">Ready to Grow <br /><span className="text-[#24c0c591]"> Your Branch?</span></div>
            <div className="text-white">Talk to our strategy team and get a free digital audit <br /> within  48 hours.</div>
          <div className="flex justify-center pt-4 ">
-             <Link to='/contactus'><div className="text-white font-bold bg-[#24c0c5] w-[200px] p-3 rounded-4xl  hover:shadow-md hover:shadow-black hover:border-1"><button>Get A Free Demo</button></div></Link>
+             <Link to='/contactus' onClick={()=>window.scrollTo(0,0)}><div className="text-white font-bold bg-[#24c0c5] w-[200px] p-3 rounded-4xl  hover:shadow-md hover:shadow-black hover:border-1"><button>Get A Free Demo</button></div></Link>
          </div>
       </div>
     </>

@@ -45,7 +45,7 @@ export function EdutechCard({
 
         <Link to="/courseform" onClick={() => window.scrollTo(0, 0)}>
           <button className="mt-6 inline-flex items-center gap-2 text-[18px] font-semibold text-[#111111] transition-opacity hover:opacity-80">
-            Learn More
+            Register Now
             <span className="text-[22px] leading-none">→</span>
           </button>
         </Link>

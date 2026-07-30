@@ -76,7 +76,7 @@ export function Softwaredevelopment() {
 
       {/* ================= CLIENTS SECTION ================= */}
       <div>
-        <div>
+        <div >
           {/* DESKTOP UNCHANGED */}
           <div className="overflow-hidden">
             <ProcessCarousel />
