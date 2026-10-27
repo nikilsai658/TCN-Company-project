@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Header } from './components/header';
+import { ScrollToTop } from './components/scrolltotop';
 import { Home } from './sections/home';
 import { About } from './sections/about';
 
@@ -41,6 +42,7 @@ function App() {
       {isDesktop && <CustomCursor />}
 
        <BrowserRouter  >
+      <ScrollToTop/>
       <Header/>
       <Routes >
         <Route path='/' element={<Home/>}/>

@@ -18,10 +18,19 @@ export function Header() {
     { name: "Career", path: "/career" },
   ];
 
+  // sub-pages that should keep their parent menu item highlighted
+  const subPages: Record<string, string[]> = {
+    "/services": ["/itconsultancy", "/edutech", "/softwaredevelopment", "/digitalmarketing", "/courseform"],
+    "/career": ["/jobs", "/internshipterms"],
+  };
+
+  const isActive = (path: string) =>
+    location.pathname === path || (subPages[path] ?? []).includes(location.pathname);
+
   return (
     <>
       {/* ================= DESKTOP ================= */}
-      <div className="hidden lg:flex w-full justify-between items-center px-10 h-[75px] bg-[#2f3e46] backdrop-blur-xl sticky top-0 z-50 shadow-lg">
+      <div className="hidden lg:flex w-full justify-between items-center px-10 h-[75px] bg-[#2f3e46] backdrop-blur-xl fixed top-0 left-0 right-0 z-50 shadow-lg">
 
         {/* LOGO */}
         <Link to="/" data-discover="true">
@@ -35,7 +44,7 @@ export function Header() {
         {/* NAV */}
         <div className="flex gap-2 bg-white/5 p-2 rounded-full border border-white/10">
           {navItems.map((item) => {
-            const active = location.pathname === item.path;
+            const active = isActive(item.path);
 
             return (
               <Link
@@ -74,7 +83,7 @@ export function Header() {
       </div>
 
       {/* ================= MOBILE HEADER ================= */}
-      <div className="flex lg:hidden justify-between items-center px-4 h-[65px] bg-[#2F3E46]/90 backdrop-blur-xl sticky top-0 z-50">
+      <div className="flex lg:hidden justify-between items-center px-4 h-[65px] bg-[#2F3E46]/90 backdrop-blur-xl fixed top-0 left-0 right-0 z-50">
         <Link to="/">
           <img src={logo} alt="Technex cloud networks logo" className="w-[65px] h-[65px]" />
         </Link>
@@ -86,6 +95,10 @@ export function Header() {
           ☰
         </button>
       </div>
+
+      {/* SPACER: keeps page content from hiding under the fixed header */}
+      <div className="hidden lg:block h-[75px]" />
+      <div className="lg:hidden h-[65px]" />
 
       {/* ================= MOBILE MENU ================= */}
       <AnimatePresence>

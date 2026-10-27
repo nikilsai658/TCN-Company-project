@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import latestimage1 from "../assets/updates.png";
 import event1 from "../assets/anneversary.png";
 import latestimage2 from "../assets/updateimage2.png";
-
-const images = [latestimage1, event1, latestimage2];
+import hinduthan from '../assets/hindusthan-collabrator.webp';
+import Rvs from '../assets/rvs.webp';
+const images = [hinduthan,Rvs,latestimage1, event1, latestimage2];
 
 export function Latestupdates() {
   return (
@@ -12,7 +13,7 @@ export function Latestupdates() {
 
       {/* Title */}
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-        Latest Updates & Events
+        Latest Updates & Collaborations
       </h2>
 
       {/* Scrollable Row */}

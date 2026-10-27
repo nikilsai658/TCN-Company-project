@@ -50,6 +50,36 @@ const jobs: Job[] = [
     skills: "Figma, Adobe XD, Sketch, Prototyping",
     experience: "0-1 yrs",
     location: "Hyderabad",
+  },
+  {
+    title: "Data Analyst",
+    skills: "Excel, SQL, Power BI, Tableau, Python",
+    experience: "2+ yrs",
+    location: "Hyderabad / Remote",
+  },
+  {
+    title: "Data Science",
+    skills: "Python, Statistics, Machine Learning, Pandas, SQL",
+    experience: "2+ yrs",
+    location: "Hyderabad / Remote",
+  },
+  {
+    title: "AI / ML",
+    skills: "Machine Learning, Deep Learning, NLP, Generative AI, Python",
+    experience: "2+ yrs",
+    location: "Hyderabad / Remote",
+  },
+  {
+    title: "Python Full Stack",
+    skills: "Python, Django, Flask, React, SQL",
+    experience: "2+ yrs",
+    location: "Hyderabad / Remote",
+  },
+  {
+    title: "Java Full Stack",
+    skills: "Core Java, Spring Boot, Hibernate, React / Angular, SQL",
+    experience: "2+ yrs",
+    location: "Hyderabad / Remote",
   }
 ];
 
@@ -143,51 +173,43 @@ export default function JobFilterUI() {
             filteredJobs.map((job, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 shadow-md hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col rounded-sm"
+                className="group bg-white rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
               >
 
-                <div className="bg-[#2f3d47] px-4 md:px-5 py-4 md:py-5 text-white flex-1">
+                <div className="bg-[#2f3d47] px-5 md:px-6 py-5 md:py-6 text-white flex-1">
 
-                  <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-5 leading-snug">
+                  <h3 className="text-lg md:text-xl font-bold leading-snug">
                     {job.title}
                   </h3>
+                  <span className="block h-[3px] w-10 bg-[#35c6cf] rounded-full mt-3 mb-5" />
 
-                  <div className="space-y-3 text-xs md:text-sm">
+                  {/* labels in a fixed column so the values line up */}
+                  <div className="grid grid-cols-[95px_1fr] gap-x-2 gap-y-3 text-xs md:text-sm">
+                    <span className="font-semibold text-gray-400">Skills</span>
+                    <span className="text-gray-100">{job.skills}</span>
 
-                    <div>
-                      <span className="font-bold text-white">Skill :</span>
-                      <span className="mt-1 px-2 text-gray-200">
-                        {job.skills}
-                      </span>
-                    </div>
+                    <span className="font-semibold text-gray-400">Experience</span>
+                    <span className="text-gray-100">{job.experience}</span>
 
-                    <div>
-                      <span className="font-bold text-white">Experience :</span>
-                      <span className="mt-1 px-2 text-gray-200">
-                        {job.experience}
-                      </span>
-                    </div>
-
-                    <div>
-                      <span className="font-bold text-white">Location :</span>
-                      <span className="mt-1 px-2 text-gray-300">
-                        {job.location}
-                      </span>
-                    </div>
-
+                    <span className="font-semibold text-gray-400">Location</span>
+                    <span className="text-gray-100">{job.location}</span>
                   </div>
                 </div>
 
-                
-                  <button onClick={() =>
-          window.open(
-            "https://docs.google.com/forms/d/e/1FAIpQLSf9V80yNvPT9q4pvwbmlEr0DNtpT7OCfkxaiQgHczu-HaEwIw/viewform?usp=header",
-            "_blank"
-          )
-        } className="w-full bg-[#35c6cf] text-white font-bold py-3 md:py-4 tracking-wide hover:bg-[#28b2bb] transition duration-300 mt-auto text-sm md:text-base">
-                    APPLY
-                  </button>
-                
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLSf9V80yNvPT9q4pvwbmlEr0DNtpT7OCfkxaiQgHczu-HaEwIw/viewform?usp=header",
+                      "_blank"
+                    )
+                  }
+                  className="group/btn w-full inline-flex items-center justify-center gap-2 bg-[#35c6cf] text-white font-semibold py-3 md:py-4 tracking-wider hover:bg-[#28b2bb] transition-colors duration-300 mt-auto text-sm md:text-base"
+                >
+                  APPLY NOW
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
 
               </div>
             ))

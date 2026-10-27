@@ -40,18 +40,6 @@ const items: AccordionItem[] = [
     },
   },
   {
-    role: "React / Angular Developer",
-    content: {
-      description:
-        "Builds modern web applications, dashboards, and enterprise UI systems.",
-      skills: ["React", "Angular", "TypeScript", "Tailwind"],
-      experience: "0-1 Years",
-      location: "Hyderabad",
-      type: "Full Time",
-      tools: ["VS Code", "Git", "Postman"],
-    },
-  },
-  {
     role: "Digital Marketing Executive",
     content: {
       description:
@@ -73,6 +61,66 @@ const items: AccordionItem[] = [
       location: "Hyderabad",
       type: "Full Time",
       tools: ["Naukri", "LinkedIn Jobs", "MS Excel"],
+    },
+  },
+  {
+    role: "Data Analyst ",
+    content: {
+      description:
+        "Mentors students in data analysis, conducts live training sessions, guides real-time projects, and prepares learners for analyst roles.",
+      skills: ["Excel", "SQL", "Power BI", "Tableau", "Python", "Statistics"],
+      experience: "2+ Years",
+      location: "Hyderabad / Remote",
+      type: "Full Time / Part Time",
+      tools: ["MS Excel", "Power BI", "Tableau", "MySQL", "Jupyter"],
+    },
+  },
+  {
+    role: "Data Science ",
+    content: {
+      description:
+        "Trains students on end-to-end data science workflows, from data cleaning and visualization to building and evaluating predictive models.",
+      skills: ["Python", "Statistics", "Machine Learning", "Pandas", "NumPy", "SQL"],
+      experience: "2+ Years",
+      location: "Hyderabad / Remote",
+      type: "Full Time / Part Time",
+      tools: ["Jupyter", "Scikit-learn", "Matplotlib", "Git"],
+    },
+  },
+  {
+    role: "AI / ML ",
+    content: {
+      description:
+        "Delivers training in Artificial Intelligence and Machine Learning, covering deep learning, NLP, and Generative AI with hands-on projects.",
+      skills: ["Machine Learning", "Deep Learning", "NLP", "Generative AI", "Python"],
+      experience: "2+ Years",
+      location: "Hyderabad / Remote",
+      type: "Full Time / Part Time",
+      tools: ["TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "Google Colab"],
+    },
+  },
+  {
+    role: "Python Full Stack",
+    content: {
+      description:
+        "Trains students to build complete web applications using Python on the backend and modern frontend technologies, with real-time project guidance.",
+      skills: ["Python", "Django", "Flask", "HTML/CSS", "JavaScript", "React", "SQL"],
+      experience: "2+ Years",
+      location: "Hyderabad / Remote",
+      type: "Full Time / Part Time",
+      tools: ["VS Code", "Git", "Postman", "MySQL / PostgreSQL"],
+    },
+  },
+  {
+    role: "Java Full Stack",
+    content: {
+      description:
+        "Mentors students in enterprise-grade full stack development using Java, Spring Boot, and modern frontend frameworks, with project-based learning.",
+      skills: ["Core Java", "Advanced Java", "Spring Boot", "Hibernate", "React / Angular", "SQL"],
+      experience: "2+ Years",
+      location: "Hyderabad / Remote",
+      type: "Full Time / Part Time",
+      tools: ["IntelliJ IDEA", "Eclipse", "Git", "Postman", "MySQL"],
     },
   },
 ];

@@ -1,5 +1,4 @@
 // ProcessCarousel.tsx
-import  { useEffect, useRef } from "react";
 import next_wash from "../assets/nextwash.png";
 import dsr from "../assets/DSREV.png";
 import pcube from '../assets/ChatGPT Image May 11, 2026, 02_53_36 PM.png'
@@ -13,42 +12,13 @@ const clients = [
   {image:whitebook}
 ];
 
+// Each half must be wider than the screen so the loop never shows a gap.
+// The track holds two identical halves and slides left by exactly one half,
+// then restarts — which looks like an endless, continuous scroll.
+const half = [...clients, ...clients];
+const track = [...half, ...half];
+
 export default function ProcessCarousel() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    // 🔥 Increased speed (adjust this value if needed)
-    const scrollSpeed = 2.5;
-
-    const autoScroll = () => {
-      if (!container) return;
-
-      container.scrollLeft += scrollSpeed;
-
-      // Reset for infinite loop effect
-      if (
-        container.scrollLeft >=
-        container.scrollWidth - container.clientWidth
-      ) {
-        container.scrollLeft = 0;
-      }
-
-      animationRef.current = requestAnimationFrame(autoScroll);
-    };
-
-    animationRef.current = requestAnimationFrame(autoScroll);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
-
   return (
     <section className="py-16 bg-[#F2F2F2]">
       <div className="mx-auto max-w-7xl px-6">
@@ -64,12 +34,10 @@ export default function ProcessCarousel() {
 
         {/* CAROUSEL */}
         <div className="relative overflow-hidden">
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
-          >
-            {[...clients, ...clients].map((client, index) => (
-              <div key={index} className="flex-shrink-0">
+          <div className="clients-marquee flex w-max">
+            {track.map((client, index) => (
+              // padding instead of gap keeps both halves exactly equal width
+              <div key={index} className="flex-shrink-0 pr-6">
                 <div className="group relative w-[140px] sm:w-[160px] md:w-[180px] aspect-square rounded-2xl overflow-hidden shadow-md bg-gray-100 hover:shadow-xl transition-all duration-300">
                   <img
                     src={client.image}
@@ -84,6 +52,26 @@ export default function ProcessCarousel() {
           </div>
         </div>
       </div>
+
+      {/* animation */}
+      <style>{`
+        .clients-marquee {
+          animation: clients-scroll 25s linear infinite;
+        }
+
+        .clients-marquee:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes clients-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+/* stop the page "rubber-band" bounce when dragging past the top/bottom */
+html,
+body {
+  overscroll-behavior: none;
+}
+
+/* if a browser still bounces, show the header/footer colour instead of white */
+html {
+  background-color: #2f3e46;
+}
+
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+}

@@ -19,41 +19,44 @@ export function Career() {
             width: "100%",
           }}
         >
-          <div className="bg-[#000000a0] hover:bg-[#00000090] h-full w-full">
+          {/* dark on the left where the text sits, lighter on the right so the photo shows */}
+          <div className="h-full w-full bg-gradient-to-r from-[#1b262c]/95 via-[#2f3e46]/80 to-[#2f3e46]/30 flex items-center">
+            <div className="px-6 md:px-20 max-w-3xl">
 
-            {/* TITLE */}
-            <div className="flex justify-center items-center py-10 md:py-20">
-              <h1 className="text-2xl md:text-4xl font-bold text-white">
-                TCN CAREERS
-              </h1>
-            </div>
-
-            {/* SUB TITLE */}
-            <div className="flex justify-start w-full">
-              <div className="ml-4 md:ml-20 text-white text-2xl md:text-4xl font-bold">
-                <h2>
-                  Endless Opportunities <br /> Start Here
-                </h2>
+              {/* EYEBROW */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[#24c0c5] text-xs md:text-sm font-semibold tracking-[0.25em] uppercase">
+                  TCN Careers
+                </span>
               </div>
-            </div>
 
-            {/* ARROW */}
-            <Link to="/jobs">
-            <div className="group flex items-center cursor-pointer mt-3">
-              <span className="ml-4 md:ml-20 text-white text-3xl md:text-4xl transition-transform duration-300 group-hover:translate-x-10">
-                ➜
-              </span>
-            </div>
-            </Link>
-            {/* BUTTON */}
-            <div className="flex justify-center items-center w-full mt-6 md:mt-0">
-              <Link to="/jobs">
-                <button className="bg-[#24c0c5a1] text-white rounded-lg hover:bg-[#1b4242d9] transition-colors font-bold px-6 md:px-10 py-2 md:py-3 text-lg md:text-2xl">
-                  Search Jobs
-                </button>
+              {/* TITLE */}
+              <h1 className="text-white text-3xl md:text-5xl font-bold leading-tight">
+                Endless Opportunities <br />
+                <span className="text-[#24c0c5]">Start Here</span>
+              </h1>
+
+              <p className="text-gray-300 text-sm md:text-lg mt-4 max-w-xl">
+                Join a team that builds, learns and grows together. Find the role that fits your future.
+              </p>
+
+              {/* BUTTON */}
+              <Link
+                to="/jobs"
+                onClick={() => window.scrollTo(0, 0)}
+                className="group mt-7 inline-flex items-center gap-3 bg-[#24c0c5] text-white font-semibold rounded-lg px-6 md:px-7 py-3 md:py-3.5 text-sm md:text-base shadow-lg shadow-[#24c0c5]/30 hover:bg-[#1fa9ae] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#24c0c5]/40 transition-all duration-300"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+                Search Jobs
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </Link>
-            </div>
 
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import Image from "../assets/edu.png";
-import { EdutechCard } from "../components/edutechcard";
+import { CourseCarousel } from "../components/coursecarousel";
 import datascience from "../assets/datascience.png";
 import ai from "../assets/Ai.png";
 import { PlacementCarousel } from "../components/placementcarousel";
@@ -127,28 +127,7 @@ export function Edutech() {
              <div className="text-2xl md:text-4xl  font-bold  text-center ">Industry-Focused IT Courses</div>
            <div className="text-gray-700 md:pt-1 text-center ">Build Your Tech Career with Industry-Focused Learning</div>
        </div>
-          <div className="flex gap-5 md:gap-8 overflow-x-auto scroll-smooth scrollbar-hide pb-2">
-
-            {courses.map((item, index) => (
-              <div
-                key={index}
-                className="
-                  min-w-[280px]
-                  sm:min-w-[300px]
-                  md:min-w-[350px]
-                  flex-shrink-0
-                  md:mx-11
-                "
-              >
-                <EdutechCard
-                  course={item.course}
-                  description={item.description}
-                  image={item.image}
-                />
-              </div>
-            ))}
-
-          </div>
+          <CourseCarousel courses={courses} />
         </div>
 
         {/* SECOND ROW */}
@@ -157,28 +136,7 @@ export function Edutech() {
              <div className="text-2xl md:text-4xl  font-bold  text-center ">Skill Development Courses</div>
            <div className="text-gray-700 md:pt-1 text-center ">Build Confidence Through Skill-Based Learning</div>
        </div>
-          <div className="flex gap-5 md:gap-8 overflow-x-auto scroll-smooth scrollbar-hide pb-2">
-
-            {courses2.map((item, index) => (
-              <div
-                key={index}
-                className="
-                  min-w-[280px]
-                  sm:min-w-[300px]
-                  md:min-w-[350px]
-                  flex-shrink-0
-                  md:mx-11
-                "
-              >
-                <EdutechCard
-                  course={item.course}
-                  description={item.description}
-                  image={item.image}
-                />
-              </div>
-            ))}
-
-          </div>
+          <CourseCarousel courses={courses2} />
         </div>
       </div>
 
