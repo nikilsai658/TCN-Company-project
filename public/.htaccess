@@ -1,0 +1,13 @@
+# Single-page app routing for Hostinger (LiteSpeed/Apache).
+# Real files and folders are served as-is; every other URL
+# (e.g. /softwaredevelopment) gets index.html so React Router can render it.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^index\.html$ - [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

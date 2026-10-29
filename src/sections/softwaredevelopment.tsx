@@ -1,5 +1,5 @@
 import image from "../assets/softwaredevelopment.png";
-import ProcessCarousel from "../components/developmentcard";
+import Projects from "../components/developmentcard";
 import Accordion from "../components/softwareAccordion";
 
 export function Softwaredevelopment() {
@@ -74,16 +74,8 @@ export function Softwaredevelopment() {
         </div>
       </div>
 
-      {/* ================= CLIENTS SECTION ================= */}
-      <div>
-        <div >
-          {/* DESKTOP UNCHANGED */}
-          <div className="overflow-hidden">
-            <ProcessCarousel />
-          </div>
-
-        </div>
-      </div>
+      {/* ================= PROJECTS SECTION ================= */}
+      <Projects />
 
       {/* ================= FAQ SECTION ================= */}
       <div className="pb-8 px-4 md:px-0">

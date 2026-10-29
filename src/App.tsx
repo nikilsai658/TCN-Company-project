@@ -1,11 +1,9 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Header } from './components/header';
 import { ScrollToTop } from './components/scrolltotop';
 import { Home } from './sections/home';
 import { About } from './sections/about';
-
 import { Footer } from './components/footer';
 import { Services } from './sections/services';
 import { Career } from './sections/career';
@@ -29,10 +27,8 @@ function App() {
     const checkDevice = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };
-
     checkDevice();
     window.addEventListener("resize", checkDevice);
-
     return () => window.removeEventListener("resize", checkDevice);
   }, []);
 
@@ -40,7 +36,6 @@ function App() {
     <>      
      <div >
       {isDesktop && <CustomCursor />}
-
        <BrowserRouter  >
       <ScrollToTop/>
       <Header/>
@@ -64,9 +59,7 @@ function App() {
       <Footer/>
       </BrowserRouter>
      </div>
-     
     </>
   )
 }
-
 export default App;
