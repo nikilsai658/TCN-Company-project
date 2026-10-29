@@ -10,6 +10,11 @@ import lmsTx3 from "../assets/lms-tx3.jpg";
 import lmsTx4 from "../assets/lms-tx4.jpg";
 import lms1 from "../assets/lms-1.jpg";
 import tcnLogo from "../assets/logo.png";
+import odLogo from "../assets/onedestiny-logo.png";
+import odVenues from "../assets/od-venues.jpg";
+import odVideography from "../assets/od-videography copy.jpg";
+import odMakeup from "../assets/od-makeup.jpg";
+import odMehendi from "../assets/od-mehendi.jpg";
 import hh1 from "../assets/h&hcoworking1.png.png";
 import hh2 from "../assets/h&hcoworking2.png.png";
 import hh3 from "../assets/h&hcoworking3.png.png";
@@ -64,8 +69,9 @@ export const projects: Project[] = [
     initials: "OD",
     category: "Platform · Event management",
     url: "https://www.onedestiny.online/",
+    logo: odLogo,
     logoBg: "#0e0b08",
-    gallery: [],
+    gallery: [odVenues, odVideography, odMakeup, odMehendi],
     description:
       "India's premium event management and wedding vendor booking platform. Couples discover, compare and book verified vendors, and vendors register and showcase their work.",
     highlights: [
