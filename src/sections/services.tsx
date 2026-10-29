@@ -21,35 +21,26 @@ function ArrowIcon({ className = "" }: { className?: string }) {
   );
 }
 
-// "Explore service" link under the text on desktop — the only thing on the card that navigates
+// "Explore Service" button under the text — the only thing on the card that navigates
 function ExploreButton({ to }: { to: string }) {
   return (
-    <div className="hidden md:flex justify-center mt-6">
+    <div className="flex justify-center mt-4 md:mt-6">
       <Link
         to={to}
         onClick={() => window.scrollTo(0, 0)}
-        className="group inline-flex items-center gap-3 text-sm font-semibold tracking-wide uppercase text-[#2f3e46] hover:text-[#24c0c5] transition-colors duration-300"
+        className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#2F3E46] pl-6 pr-1.5 py-1.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-white shadow-md shadow-[#2F3E46]/25 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#24c0c5]/40 active:scale-95 transition-all duration-300"
       >
-        Explore Service
-        <span className="w-9 h-9 flex items-center justify-center rounded-full border border-[#24c0c5] text-[#24c0c5] group-hover:bg-[#24c0c5] group-hover:text-white transition-all duration-300">
+        {/* accent fill that sweeps in from the left on hover */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 -translate-x-full bg-[#24c0c5] group-hover:translate-x-0 transition-transform duration-500 ease-out"
+        />
+        <span className="relative">Explore Service</span>
+        <span className="relative w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#24c0c5] text-white group-hover:bg-white group-hover:text-[#24c0c5] transition-colors duration-300">
           <ArrowIcon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </span>
       </Link>
     </div>
-  );
-}
-
-// arrow button on the image corner for mobile, where there's no room under the text
-function MobileArrow({ to }: { to: string }) {
-  return (
-    <Link
-      to={to}
-      onClick={() => window.scrollTo(0, 0)}
-      aria-label="Explore service"
-      className="md:hidden absolute bottom-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur text-[#24c0c5] shadow-md active:scale-90 transition"
-    >
-      <ArrowIcon className="w-4 h-4" />
-    </Link>
   );
 }
 
@@ -105,7 +96,6 @@ export function Services() {
 
               {/* IMAGE */}
               <div className="w-full md:w-1/2 relative md:min-h-[300px]">
-                <MobileArrow to="/itconsultancy" />
                 <img
                   src={itconsultancy}
                   alt="IT Consultancy"
@@ -150,7 +140,6 @@ export function Services() {
               </div>
 
               <div className="w-full md:w-1/2 relative md:min-h-[300px]">
-                <MobileArrow to="/softwaredevelopment" />
                 <img
                   src={softwaredevelopment}
                   alt="Software Development"
@@ -196,7 +185,6 @@ export function Services() {
               </div>
 
               <div className="w-full md:w-1/2 relative md:min-h-[300px]">
-                <MobileArrow to="/edutech" />
                 <img
                   src={edutech}
                   alt="Edutech"
@@ -241,7 +229,6 @@ export function Services() {
               </div>
 
               <div className="w-full md:w-1/2 relative md:min-h-[300px]">
-                <MobileArrow to="/digitalmarketing" />
                 <img
                   src={digitalmarketing}
                   alt="Digital Marketing"

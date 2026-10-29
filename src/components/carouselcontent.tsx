@@ -45,7 +45,16 @@ export default function TextCarousel() {
   }, [current]);
 
   return (
-    <div className="overflow-hidden bg-gray-900 text-white p-3 relative w-full">
+    <div
+      className="overflow-hidden text-white p-3 relative w-full"
+      // same charcoal gradient as the hero below so the two read as one block
+      style={{ background: "linear-gradient(90deg, #0a1115 0%, #15222a 50%, #0b1418 100%)" }}
+    >
+      {/* faint teal hairline that fades out at both ends */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(36,192,197,0.45), transparent)" }}
+      />
       <div
         className={`flex ${
           transition ? "transition-transform duration-700 ease-in-out" : ""
@@ -59,8 +68,10 @@ export default function TextCarousel() {
             key={index}
             className="min-w-full flex items-center justify-center text-center"
           >
-            <p className="text-md md:text-xl font-bold text-gray-300">
+            <p className="flex items-center gap-3 text-md md:text-xl font-semibold tracking-wide text-gray-100">
+            
               {offer.description}
+             
             </p>
           </div>
         ))}

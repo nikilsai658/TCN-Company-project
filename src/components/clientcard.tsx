@@ -1,6 +1,16 @@
+import desertOazisLogo from "../assets/DESERTOAZIS.png";
+import oneDestinyLogo from "../assets/onedestiny-logo.png";
+import nextWashLogo from "../assets/nextwash.png";
+import dsrEvLogo from "../assets/DSREV.png";
 
-
-const testimonials = [
+const testimonials: {
+  id: string;
+  company: string;
+  category: string;
+  result: string;
+  logo?: string;
+  logoBg?: string;
+}[] = [
   {
     id: "AL",
     company: "Adding Life",
@@ -12,26 +22,31 @@ const testimonials = [
     company: "Next Wash",
     category: "WASHED",
     result: "↑ 180% App Downloads",
+    logo: nextWashLogo,
+    logoBg: "#0057e7",
   },
   {
     id: "DSR",
     company: "DSR EV Mobility",
     category: "ELECTRIC VEHICLES",
     result: "↑ 99% Vehicles Success",
+    logo: dsrEvLogo,
   },
   {
-    id: "BH",
-    company: "BlueHarbour Retail",
-    category: "E-COMMERCE",
-    result: "↑ 5.2× ROAS on Meta Ads",
+    id: "DO",
+    company: "Desert Oazis",
+    category: "FAMILY MEDICINE",
+    result: "↑ 250% Patient Bookings",
+    logo: desertOazisLogo,
   },
   {
-    id: "ZF",
-    company: "ZenFin Solutions",
-    category: "FINTECH",
-    result: "↑ 210% Lead Quality",
+    id: "OD",
+    company: "OneDestiny",
+    category: "EVENT MANAGEMENT",
+    result: "1,600+ Vendor Listings",
+    logo: oneDestinyLogo,
+    logoBg: "#0e0b08",
   },
-   
 ];
 
 // duplicate for infinite loop
@@ -51,11 +66,20 @@ export function TestimonialsCards() {
               {/* Top */}
               <div>
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-black/20">
-                    <span className="text-2xl font-bold text-cyan-400">
-                      {item.id}
-                    </span>
-                  </div>
+                  {item.logo ? (
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden"
+                      style={{ backgroundColor: item.logoBg ?? "#ffffff" }}
+                    >
+                      <img src={item.logo} alt={item.company} className="w-full h-full object-contain p-1" />
+                    </div>
+                  ) : (
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-black/20">
+                      <span className="text-2xl font-bold text-cyan-400">
+                        {item.id}
+                      </span>
+                    </div>
+                  )}
 
                   <div>
                     <h3 className="text-white text-xl font-semibold">

@@ -14,8 +14,9 @@ import amazon from '../assets/amazon.jpg'
 import jpmorgan from '../assets/jpmorganlogo.png'
 import { Link } from 'react-router-dom'
 import { Mangercard } from '../components/managerscard'
-import head from '../assets/main.jpg'
 import { Latestupdates } from '../components/latestupdates'
+import { ServicesBook } from '../components/servicesbook'
+import { HeroWires } from '../components/herowires'
 import tekbricks from '../assets/tekbricks-.png'
 import brainstrom from '../assets/brainstrom.png'
 import drafttech from '../assets/Drafttech.jpeg'
@@ -31,39 +32,47 @@ export function Home() {
 
         {/* HERO SECTION */}
         <div
-          className="relative bg-cover bg-center flex items-center "
-          style={{
-            backgroundImage: `url(${head})`,
-          }}
+          className="hero-bg relative flex items-center "
         >
 
+          {/* ANIMATED WIRE BACKGROUND */}
+          <HeroWires />
+
           {/* DESKTOP */}
-          <div className="hidden md:flex h-[550px] items-center">
+          <div className="relative z-10 hidden md:flex h-[550px] w-full items-center">
 
             <div
-              className="text-5xl text-white font-bold px-14 bg-[#00000060] p-10 mx-10"
+              className="hero-box text-5xl lg:text-4xl xl:text-5xl text-white font-bold px-14 p-10 mx-10 shrink-0 w-[800px] lg:w-[560px] xl:w-[680px] 2xl:w-[800px]"
               style={{
                 lineHeight: '60px',
-                width: '800px',
                 borderRadius: '10px',
               }}
             >
-              <div>Bridging Technology,</div>
-              <div>Education,</div>
-              <div>Business Growth</div>
+              <span className="hero-shine" aria-hidden="true" />
+              <div className="hero-line">Bridging Technology,</div>
+              <div className="hero-line" style={{ animationDelay: '0.25s' }}>Education,</div>
+              <div className="hero-line hero-highlight" style={{ animationDelay: '0.5s' }}>Business Growth</div>
+              <div className="hero-underline" />
+            </div>
+
+            {/* 3D SERVICES BOOK */}
+            <div className="hidden lg:flex flex-1 justify-center lg:scale-[0.75] xl:scale-100">
+              <ServicesBook />
             </div>
 
           </div>
 
           {/* MOBILE */}
-          <div className="md:hidden h-[420px] flex items-center px-4">
+          <div className="relative z-10 md:hidden h-[420px] w-full flex items-center px-4">
 
-            <div className="bg-[#00000070] p-5 rounded-xl w-full">
+            <div className="hero-box p-5 rounded-xl w-full">
+              <span className="hero-shine" aria-hidden="true" />
 
               <div className="text-white font-bold text-3xl leading-[45px]">
-                <div>Bridging Technology,</div>
-                <div>Education,</div>
-                <div>Business Growth</div>
+                <div className="hero-line">Bridging Technology,</div>
+                <div className="hero-line" style={{ animationDelay: '0.25s' }}>Education,</div>
+                <div className="hero-line hero-highlight" style={{ animationDelay: '0.5s' }}>Business Growth</div>
+                <div className="hero-underline" />
               </div>
 
             </div>
@@ -72,7 +81,7 @@ export function Home() {
 
           {/* LOGO SLIDER DESKTOP */}
           <div
-  className=" absolute bottom-0 bg-white overflow-hidden"
+  className=" absolute bottom-0 z-20 bg-white overflow-hidden"
   style={{
     width: window.innerWidth < 768 ? '200px' : '400px',
     height: '70px',
@@ -120,8 +129,8 @@ export function Home() {
         </div>
 
         {/* TITLE */}
-        <div className="flex justify-center items-center text-center text-xl md:text-3xl text-black font-bold bg-[#F2F2F2] px-4 py-4">
-          <h1>Empowering Thousands of Clients Across India</h1>
+        <div className="dark-strip flex justify-center items-center text-center text-xl md:text-3xl text-white font-bold px-4 py-5 md:py-6">
+          <h1>Empowering Thousands of Clients Across <span className="text-[#24c0c5]">India</span></h1>
         </div>
 
         {/* CARDS */}
@@ -130,11 +139,11 @@ export function Home() {
         </div>
 
         {/* ABOUT COMPANY */}
-        <div className="flex justify-center bg-[#F2F2F2] mx-4 md:mx-20 p-5 my-6 rounded-xl">
+        <div className="dark-panel flex justify-center mx-4 md:mx-20 p-5 md:p-8 my-6 rounded-xl">
 
-          <p className="text-[#374151] text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
+          <p className="text-gray-200 text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
 
-            Based in Hyderabad, TechNex Cloud Networks is your integrated
+            Based in <span className="text-[#24c0c5]">Hyderabad</span>, <span className="text-white">TechNex Cloud Networks</span> is your integrated
             partner for digital growth and technical expertise. We bridge the
             gap between academic potential and industry reality by offering
             high-impact Digital Marketing, strategic IT Consultancy, and bespoke
@@ -196,7 +205,7 @@ export function Home() {
         </div>
 
         {/* OFFICE SECTION */}
-        <div className="bg-[#F2F2F2] mx-4 md:mx-20 p-4 md:p-5 my-6 rounded-xl">
+        <div className="dark-panel mx-4 md:mx-20 p-4 md:p-5 my-6 rounded-xl">
 
           {/* BLOCK 1 */}
           <div className="grid md:grid-cols-2 gap-10 p-4 md:p-10 items-center">
@@ -213,7 +222,7 @@ export function Home() {
 
             <div>
 
-              <p className="text-[#1E2A38] text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
+              <p className="text-gray-200 text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
 
                 Our modern workspace is designed to support innovation,
                 teamwork, and productivity in a professional environment. We
@@ -238,7 +247,7 @@ export function Home() {
 
             <div className="order-2 md:order-1">
 
-              <p className="text-[#374151] text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
+              <p className="text-gray-200 text-[15px] md:text-[18px] leading-[30px] md:leading-[35px] font-semibold">
 
                 TechNex Cloud Networks delivers intelligent digital solutions
                 that help businesses grow faster, operate smarter, and scale
