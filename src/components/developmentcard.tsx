@@ -323,7 +323,6 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#52796F]">Portfolio</p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#2F3E46] mt-2">Projects we've built</h2>
             <p className="text-gray-600 mt-3">
               Websites, platforms, apps and portals designed, developed and shipped by the TechNex team.
